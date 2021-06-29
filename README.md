@@ -1,6 +1,8 @@
 # Erinnerung ![flag](https://github.githubassets.com/images/icons/emoji/unicode/1f1e9-1f1ea.png)
 Erinnerung für Mint / Ubuntu
 
+Eine veränderte Version von [bzoing by Luis Louro](https://github.com/lapisdecor/bzoing)
+
 ## Voraussetzungen
 
 - python3
