@@ -11,7 +11,7 @@ filepath = 'sinoamarelo.svg'
 
 class SetAlarmWindow(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title="Erinnerung einstellen")
+        Gtk.Window.__init__(self, title="Erinnerung erstellen")
         #Sets the position beginig with CENTER for non-supporting systems
         self.set_position(Gtk.WindowPosition.CENTER)
         #self.set_gravity(Gdk.Gravity.NORTH_EAST)
@@ -32,7 +32,7 @@ class SetAlarmWindow(Gtk.Window):
 
         # create a label
         task_label = Gtk.Label()
-        task_label.set_text('Task: ')
+        task_label.set_text('Text der angezeigt werden soll: ')
         box.add(task_label)
 
         # create a field to input the task description
@@ -81,7 +81,7 @@ class SetAlarmWindow(Gtk.Window):
         box.add(time_hbox)
 
         # add OK button
-        button_set_alarm = Gtk.Button("Set")
+        button_set_alarm = Gtk.Button("OK")
         button_set_alarm.connect('clicked', self.button_set_alarm_cliked)
         box.add(button_set_alarm)
         self.add(box)
