@@ -6,6 +6,10 @@ from gi.repository import Gdk
 import datetime
 import subprocess
 import share
+import datetime
+import locale
+loc = locale.getlocale()
+locale.setlocale(locale.LC_ALL, loc)
 
 filepath = 'sinoamarelo.svg'
 

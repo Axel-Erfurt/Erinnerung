@@ -3,14 +3,14 @@ gi.require_version('Gtk', '3.0')
 gi.require_version('Gdk', '3.0')
 from gi.repository import Gtk
 from gi.repository import Gdk
-
+import datetime
 import share
 
 filepath = 'sinoamarelo.svg'
 
 class SeeTasks(Gtk.Window):
     def __init__(self):
-        Gtk.Window.__init__(self, title='See Tasks')
+        Gtk.Window.__init__(self, title='Erinnerungen')
         #Sets the position beginig with CENTER for non-supporting systems
         self.set_position(Gtk.WindowPosition.CENTER)
         #self.set_gravity(Gdk.Gravity.NORTH_EAST)
@@ -25,18 +25,18 @@ class SeeTasks(Gtk.Window):
 
         self.store = Gtk.ListStore(str, str, str, bool)
         for task in share.tasklist.get_task_list():
-            treeiter = self.store.append([str(task.id), task.description, str(task.alarm), 0])
+            treeiter = self.store.append([str(task.id), task.description, str(datetime.datetime.strptime(str(task.alarm), '%Y-%m-%d %H:%M:%S').strftime('%d.%m.%Y %H:%M:%S')), 0])
 
         tree = Gtk.TreeView(self.store)
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn("Id", renderer, text=0)
+        column = Gtk.TreeViewColumn("ID", renderer, text=0)
         tree.append_column(column)
-        column = Gtk.TreeViewColumn("Description", renderer, text=1)
+        column = Gtk.TreeViewColumn("Beschreibung", renderer, text=1)
         tree.append_column(column)
-        column = Gtk.TreeViewColumn("Alarm", renderer, text=2)
+        column = Gtk.TreeViewColumn("Alarmzeit", renderer, text=2)
         tree.append_column(column)
         renderer = Gtk.CellRendererToggle()
-        column = Gtk.TreeViewColumn("Delete", renderer, active=3)
+        column = Gtk.TreeViewColumn("Löschen", renderer, active=3)
         tree.append_column(column)
 
         #path = Gtk.TreePath(0)
@@ -83,20 +83,20 @@ class SeePastTasks(Gtk.Window):
         self.connect('destroy', self.quit_window)
         store = Gtk.ListStore(str, str, str)
         for task in share.tasklist.get_due_tasks():
-            treeiter = store.append([str(task.id), task.description, str(task.alarm)])
+            treeiter = store.append([str(task.id), task.description, str(datetime.datetime.strptime(str(task.alarm), '%Y-%m-%d %H:%M:%S').strftime('%d.%m.%Y %H:%M:%S'))])
 
         tree = Gtk.TreeView(store)
         renderer = Gtk.CellRendererText()
-        column = Gtk.TreeViewColumn("Id", renderer, text=0)
+        column = Gtk.TreeViewColumn("ID", renderer, text=0)
         tree.append_column(column)
-        column = Gtk.TreeViewColumn("Description", renderer, text=1)
+        column = Gtk.TreeViewColumn("Beschreibung", renderer, text=1)
         tree.append_column(column)
-        column = Gtk.TreeViewColumn("Alarm", renderer, text=2)
+        column = Gtk.TreeViewColumn("Alarmzeit", renderer, text=2)
         tree.append_column(column)
 
         box.add(tree)
 
-        button = Gtk.Button("Clear and Close")
+        button = Gtk.Button("Löschen und Schliessen")
         button.connect('clicked', self.clear)
         box.add(button)
 

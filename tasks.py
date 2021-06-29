@@ -9,6 +9,10 @@ from xdg.BaseDirectory import save_data_path
 import gi
 gi.require_version('Gtk', '3.0')
 from gi.repository import Gtk
+import datetime
+import locale
+loc = locale.getlocale()
+locale.setlocale(locale.LC_ALL, loc)
 
 share_dir = save_data_path("bzoing")
 
@@ -183,7 +187,7 @@ class Monitor():
                     # get task id
                     current_id = task_list[0].id
                     current_desc = task_list[0].description
-                    print("executing alarm: {}".format(task_list[0].alarm))
+                    print("Alarm ausführen: {}".format(task_list[0].alarm))
                     # if there is a function, execute it
                     if task_list[0].function is not None:
                         task_list[0].function()
