@@ -6,3 +6,5 @@ Erinnerung für Mint / Ubuntu
 ```
 cd Pfad/zu/Erinnerung && python3 ./erinnerung.py
 ```
+
+![screenshot](https://raw.githubusercontent.com/Axel-Erfurt/Erinnerung/main/screenshot.png)
