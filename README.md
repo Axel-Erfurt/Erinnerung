@@ -11,7 +11,7 @@ Eine veränderte Version von [bzoing by Luis Louro](https://github.com/lapisdeco
 ## Installation
 
 ```
-cd ~/Downloads;wget https://github.com/Axel-Erfurt/Erinnerung/archive/refs/heads/main.zip;unzip main.zip;mv Erinnerung-main ~/.local/share/Erinnerung;rm main.zip;cd ~/.local/share/Erinnerung;python3 ./erinnerung.py
+cd ~/Downloads;wget https://github.com/Axel-Erfurt/Erinnerung/archive/refs/heads/main.zip;unzip main.zip;mv Erinnerung-main ~/.local/share/Erinnerung;rm main.zip;cd ~/.local/share/Erinnerung;cp erinnerung.desktop ~/.local/share/applications;python3 ./erinnerung.py
 ```
 
 ## Start
