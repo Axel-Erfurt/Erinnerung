@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Erinnerung
+Comment=an Aufgaben erinnern
+Icon=clock
+Exec=sh -c "cd ~/.local/share/Erinnerung && python3 ./erinnerung.py"
+Categories=Utility
+Path=
+StartupNotify=false
+Terminal=false
+Keywords=reminder;
+MimeType=
