@@ -19,5 +19,14 @@ cd ~/Downloads;wget https://github.com/Axel-Erfurt/Erinnerung/archive/refs/heads
 ```
 cd ~/.local/share/Erinnerung;python3 ./erinnerung.py
 ```
+## Deinstallation
+
+```
+rm ~/.local/share/Erinnerung
+```
+
+```
+rm ~/.local/share/applications/erinnerung.desktop
+```
 
 ![screenshot](https://raw.githubusercontent.com/Axel-Erfurt/Erinnerung/main/screenshot.png)
