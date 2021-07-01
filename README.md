@@ -22,7 +22,7 @@ cd ~/.local/share/Erinnerung;python3 ./erinnerung.py
 ## Deinstallation
 
 ```
-rm ~/.local/share/Erinnerung
+rm -rf ~/.local/share/Erinnerung
 ```
 
 ```
