@@ -197,7 +197,7 @@ class Monitor():
                         my_sound = Playme()
                         my_sound.play()
                     if task_list[0].notify:
-                        subprocess.Popen(['notify-send', "-t", "10000", "-i", "clock", "Erinnerung", current_desc])
+                        subprocess.Popen(['notify-send', "-t", "0", "-i", "clock", "Erinnerung", current_desc])
                         #self.open_message_window(current_desc)
 
                     # put due task in due_task_list
