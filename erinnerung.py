@@ -20,7 +20,7 @@ import os
 import setalarmwindow
 import seetasks
 
-filepath = 'sinoamarelo.svg'
+filepath = os.path.join(os.path.dirname(__file__), 'sinoamarelo.svg')
 APPINDICATOR_ID = 'bzoing'
 
 
